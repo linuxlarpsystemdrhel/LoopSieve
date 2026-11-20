@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-003-audit-package-metadata",
+  "name": "Audit package metadata",
+  "purpose": "Perform a repeatable local investigation: audit package metadata.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "pyproject_meta",
+      "reason": "Collect pyproject meta evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "requirements_read",
+      "reason": "Collect requirements read evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "release_readiness",
+      "reason": "Collect release readiness evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "pyproject_meta",
+    "requirements_read",
+    "release_readiness"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-003-audit-package-metadata"
+}

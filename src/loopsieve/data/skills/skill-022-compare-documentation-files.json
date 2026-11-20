@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-022-compare-documentation-files",
+  "name": "Compare documentation files",
+  "purpose": "Perform a repeatable local investigation: compare documentation files.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "file_diff",
+      "reason": "Collect file diff evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "markdown_headings",
+      "reason": "Collect markdown headings evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "file_diff",
+    "markdown_headings"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-022-compare-documentation-files"
+}

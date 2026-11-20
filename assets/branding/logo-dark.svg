@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="365" height="112" viewBox="0 0 365 112" role="img" aria-label="LoopSieve">
+<title>LoopSieve</title>
+<g transform="translate(12 8)">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+      <path d="M12 27h12M9 44h10M12 61h9" stroke="#A3BEC1"/>
+      <path d="M68 28H48a20 20 0 1 0 0 40h10" stroke="#EFF8F7"/>
+      <path d="M57 68h4l19-19m-13 0h13v13" stroke="#5CDECB"/>
+    </g>
+    </g><text x="114" y="73" font-family="Liberation Sans, Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="-1.8" fill="#EFF8F7">LoopSieve</text>
+</svg>

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-008-review-python-type-surface",
+  "name": "Review Python type surface",
+  "purpose": "Perform a repeatable local investigation: review python type surface.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "python_functions",
+      "reason": "Collect python functions evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "python_docstrings",
+      "reason": "Collect python docstrings evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "python_imports",
+      "reason": "Collect python imports evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "python_functions",
+    "python_docstrings",
+    "python_imports"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-008-review-python-type-surface"
+}

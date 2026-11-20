@@ -1,0 +1,9 @@
+{
+  "id": "technology-042",
+  "name": "git commit info inspection",
+  "implementation": "toolkit.git_commit_info",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

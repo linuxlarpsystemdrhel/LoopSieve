@@ -1,0 +1,9 @@
+{
+  "id": "technology-048",
+  "name": "lock files inspection",
+  "implementation": "toolkit.lock_files",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

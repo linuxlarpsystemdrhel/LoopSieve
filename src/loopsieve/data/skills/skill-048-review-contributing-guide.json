@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-048-review-contributing-guide",
+  "name": "Review CONTRIBUTING guide",
+  "purpose": "Perform a repeatable local investigation: review contributing guide.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "markdown_headings",
+      "reason": "Collect markdown headings evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "file_read",
+      "reason": "Collect file read evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "markdown_headings",
+    "file_read"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-048-review-contributing-guide"
+}

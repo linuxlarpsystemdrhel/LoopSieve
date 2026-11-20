@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-005-assess-release-readiness",
+  "name": "Assess release readiness",
+  "purpose": "Perform a repeatable local investigation: assess release readiness.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "release_readiness",
+      "reason": "Collect release readiness evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "git_status",
+      "reason": "Collect git status evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "git_tags",
+      "reason": "Collect git tags evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "release_readiness",
+    "git_status",
+    "git_tags"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-005-assess-release-readiness"
+}

@@ -1,0 +1,844 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-10",
+  "target_count": 300,
+  "policy": "Profiles are metadata. VERIFIED is used only after a real probe; no provider was called in this catalog.",
+  "providers": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "base_url": "https://api.openai.com/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision",
+        "audio"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "base_url": "https://api.anthropic.com/v1",
+      "protocol": "anthropic",
+      "auth": "x-api-key",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "google-gemini",
+      "name": "Google Gemini",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "protocol": "google",
+      "auth": "x-goog-api-key",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision",
+        "audio"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "azure-openai",
+      "name": "Azure OpenAI",
+      "base_url": "https://{resource}.openai.azure.com/openai",
+      "protocol": "azure-openai",
+      "auth": "api-key",
+      "models_endpoint": null,
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "aws-bedrock",
+      "name": "AWS Bedrock",
+      "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+      "protocol": "aws-bedrock",
+      "auth": "aws-sigv4",
+      "models_endpoint": null,
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "base_url": "https://api.mistral.ai/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "groq",
+      "name": "Groq",
+      "base_url": "https://api.groq.com/openai/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "base_url": "https://api.together.xyz/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision",
+        "image"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "fireworks",
+      "name": "Fireworks AI",
+      "base_url": "https://api.fireworks.ai/inference/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "base_url": "https://openrouter.ai/api/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "deepinfra",
+      "name": "DeepInfra",
+      "base_url": "https://api.deepinfra.com/v1/openai",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "base_url": "https://api.perplexity.ai",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": null,
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": false,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "base_url": "https://api.cohere.com/v2",
+      "protocol": "cohere",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "embeddings"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "huggingface-inference",
+      "name": "Hugging Face Inference",
+      "base_url": "https://api-inference.huggingface.co",
+      "protocol": "huggingface",
+      "auth": "bearer",
+      "models_endpoint": null,
+      "modalities": [
+        "text",
+        "vision",
+        "audio",
+        "image"
+      ],
+      "streaming": false,
+      "tool_calling": false,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "base_url": "https://api.deepseek.com",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "alibaba-dashscope",
+      "name": "Alibaba DashScope",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot Kimi",
+      "base_url": "https://api.moonshot.cn/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "zhipu",
+      "name": "Zhipu GLM",
+      "base_url": "https://open.bigmodel.cn/api/paas/v4",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "baichuan",
+      "name": "Baichuan",
+      "base_url": "https://api.baichuan-ai.com/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "base_url": "https://api.minimax.chat/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "audio"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "base_url": "https://api.x.ai/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "cerebras",
+      "name": "Cerebras",
+      "base_url": "https://api.cerebras.ai/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "sambanova",
+      "name": "SambaNova",
+      "base_url": "https://api.sambanova.ai/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "hyperbolic",
+      "name": "Hyperbolic",
+      "base_url": "https://api.hyperbolic.xyz/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision",
+        "image"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "novita",
+      "name": "Novita AI",
+      "base_url": "https://api.novita.ai/v3/openai",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision",
+        "image"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "nebius",
+      "name": "Nebius AI Studio",
+      "base_url": "https://api.studio.nebius.ai/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "nvidia-nim",
+      "name": "NVIDIA NIM",
+      "base_url": "https://integrate.api.nvidia.com/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "github-models",
+      "name": "GitHub Models",
+      "base_url": "https://models.inference.ai.azure.com",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama (local)",
+      "base_url": "http://127.0.0.1:11434",
+      "protocol": "ollama",
+      "auth": "none",
+      "models_endpoint": "/api/tags",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "lmstudio",
+      "name": "LM Studio (local)",
+      "base_url": "http://127.0.0.1:1234/v1",
+      "protocol": "openai",
+      "auth": "none",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "vllm",
+      "name": "vLLM (local)",
+      "base_url": "http://127.0.0.1:8000/v1",
+      "protocol": "openai",
+      "auth": "none",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "llamacpp",
+      "name": "llama.cpp server (local)",
+      "base_url": "http://127.0.0.1:8080/v1",
+      "protocol": "openai",
+      "auth": "none",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": false,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "localai",
+      "name": "LocalAI (local)",
+      "base_url": "http://127.0.0.1:8080/v1",
+      "protocol": "openai",
+      "auth": "none",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision",
+        "audio",
+        "image"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "jan",
+      "name": "Jan (local)",
+      "base_url": "http://127.0.0.1:1337/v1",
+      "protocol": "openai",
+      "auth": "none",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "text-generation-webui",
+      "name": "Text Generation WebUI",
+      "base_url": "http://127.0.0.1:5000/v1",
+      "protocol": "openai",
+      "auth": "none",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": false,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "koboldcpp",
+      "name": "KoboldCpp",
+      "base_url": "http://127.0.0.1:5001/api/v1",
+      "protocol": "openai",
+      "auth": "none",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": false,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "replicate",
+      "name": "Replicate",
+      "base_url": "https://api.replicate.com/v1",
+      "protocol": "replicate",
+      "auth": "token",
+      "models_endpoint": null,
+      "modalities": [
+        "text",
+        "vision",
+        "image",
+        "audio",
+        "video"
+      ],
+      "streaming": false,
+      "tool_calling": false,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare Workers AI",
+      "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/run",
+      "protocol": "cloudflare",
+      "auth": "bearer",
+      "models_endpoint": null,
+      "modalities": [
+        "text",
+        "vision",
+        "image",
+        "audio"
+      ],
+      "streaming": false,
+      "tool_calling": false,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "voyage",
+      "name": "Voyage AI",
+      "base_url": "https://api.voyageai.com/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "embeddings"
+      ],
+      "streaming": false,
+      "tool_calling": false,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "jina",
+      "name": "Jina AI",
+      "base_url": "https://api.jina.ai/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "embeddings",
+        "vision"
+      ],
+      "streaming": false,
+      "tool_calling": false,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "ai21",
+      "name": "AI21 Labs",
+      "base_url": "https://api.ai21.com/studio/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": null,
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": false,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "tencent-hunyuan",
+      "name": "Tencent Hunyuan",
+      "base_url": "https://api.hunyuan.cloud.tencent.com/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "baidu-qianfan",
+      "name": "Baidu Qianfan",
+      "base_url": "https://qianfan.baidubce.com/v2",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "CONFIGURED_NOT_TESTED",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    },
+    {
+      "id": "litellm-proxy",
+      "name": "LiteLLM Proxy (custom)",
+      "base_url": "http://127.0.0.1:4000/v1",
+      "protocol": "openai",
+      "auth": "bearer",
+      "models_endpoint": "/models",
+      "modalities": [
+        "text",
+        "vision",
+        "audio",
+        "image"
+      ],
+      "streaming": true,
+      "tool_calling": true,
+      "status": "LOCAL_SERVER",
+      "source": "public provider documentation",
+      "license": "provider terms",
+      "verified_models": [],
+      "notes": "Profile metadata only; no paid request was made."
+    }
+  ]
+}

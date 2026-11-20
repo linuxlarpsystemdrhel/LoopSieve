@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-024-inspect-git-branch-history",
+  "name": "Inspect git branch history",
+  "purpose": "Perform a repeatable local investigation: inspect git branch history.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "git_branches",
+      "reason": "Collect git branches evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "git_log",
+      "reason": "Collect git log evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "git_tags",
+      "reason": "Collect git tags evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "git_branches",
+    "git_log",
+    "git_tags"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-024-inspect-git-branch-history"
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-013-inspect-repository-tree",
+  "name": "Inspect repository tree",
+  "purpose": "Perform a repeatable local investigation: inspect repository tree.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "workspace_tree",
+      "reason": "Collect workspace tree evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "file_count",
+      "reason": "Collect file count evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "extension_inventory",
+      "reason": "Collect extension inventory evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "workspace_tree",
+    "file_count",
+    "extension_inventory"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-013-inspect-repository-tree"
+}

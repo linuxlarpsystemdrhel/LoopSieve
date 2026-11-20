@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-016-check-package-json",
+  "name": "Check package JSON",
+  "purpose": "Perform a repeatable local investigation: check package json.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "json_validate",
+      "reason": "Collect json validate evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "json_keys",
+      "reason": "Collect json keys evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "package_scripts",
+      "reason": "Collect package scripts evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "json_validate",
+    "json_keys",
+    "package_scripts"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-016-check-package-json"
+}

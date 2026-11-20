@@ -1,0 +1,9 @@
+{
+  "id": "technology-045",
+  "name": "workspace symlinks inspection",
+  "implementation": "toolkit.workspace_symlinks",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

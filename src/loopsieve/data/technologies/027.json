@@ -1,0 +1,9 @@
+{
+  "id": "technology-027",
+  "name": "file sha256 inspection",
+  "implementation": "toolkit.file_sha256",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

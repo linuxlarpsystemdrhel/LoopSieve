@@ -1,0 +1,9 @@
+{
+  "id": "technology-047",
+  "name": "git status inspection",
+  "implementation": "toolkit.git_status",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

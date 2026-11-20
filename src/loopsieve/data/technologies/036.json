@@ -1,0 +1,9 @@
+{
+  "id": "technology-036",
+  "name": "toml validate inspection",
+  "implementation": "toolkit.toml_validate",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

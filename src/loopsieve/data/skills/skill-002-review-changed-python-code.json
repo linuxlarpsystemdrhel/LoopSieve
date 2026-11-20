@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-002-review-changed-python-code",
+  "name": "Review changed Python code",
+  "purpose": "Perform a repeatable local investigation: review changed python code.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "git_diff_stat",
+      "reason": "Collect git diff stat evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "python_ast_symbols",
+      "reason": "Collect python ast symbols evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "python_complexity",
+      "reason": "Collect python complexity evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "git_diff_stat",
+    "python_ast_symbols",
+    "python_complexity"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-002-review-changed-python-code"
+}

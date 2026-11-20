@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-031-trace-python-classes",
+  "name": "Trace Python classes",
+  "purpose": "Perform a repeatable local investigation: trace python classes.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "python_classes",
+      "reason": "Collect python classes evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "python_docstrings",
+      "reason": "Collect python docstrings evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "python_classes",
+    "python_docstrings"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-031-trace-python-classes"
+}

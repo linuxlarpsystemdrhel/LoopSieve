@@ -1,0 +1,12 @@
+{
+  "name": "loopsieve",
+  "displayName": "LoopSieve",
+  "version": "0.1.0",
+  "description": "Run relevant local checks after edit batches and return only new diagnostic evidence.",
+  "author": {
+    "name": "LoopSieve contributors"
+  },
+  "license": "MIT",
+  "keywords": ["verification", "coding-agents", "developer-tools"],
+  "defaultEnabled": true
+}

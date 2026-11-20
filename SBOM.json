@@ -1,0 +1,14 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "loopsieve",
+      "version": "0.6.0"
+    }
+  },
+  "components": [],
+  "note": "Runtime uses Python standard library. Optional Textual is not bundled."
+}

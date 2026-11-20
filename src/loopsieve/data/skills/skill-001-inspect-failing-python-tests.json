@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-001-inspect-failing-python-tests",
+  "name": "Inspect failing Python tests",
+  "purpose": "Perform a repeatable local investigation: inspect failing python tests.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "unit_discovery",
+      "reason": "Collect unit discovery evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "search_text",
+      "reason": "Collect search text evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "python_syntax",
+      "reason": "Collect python syntax evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "unit_discovery",
+    "search_text",
+    "python_syntax"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-001-inspect-failing-python-tests"
+}

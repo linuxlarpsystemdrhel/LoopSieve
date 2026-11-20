@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loopsieve"
+version = "0.6.0"
+description = "Local verification and diagnostic delta filtering for coding workflows, with optional on-device LLM explanations."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  {name = "LoopSieve contributors"}
+]
+keywords = ["claude-code", "coding-agent", "verification", "developer-tools", "hooks"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Testing",
+]
+
+[project.optional-dependencies]
+tui = ["textual>=0.60,<9"]
+
+[project.scripts]
+loopsieve = "loopsieve.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+loopsieve = [
+  "data/agents/[0-9][0-9][0-9]-*.json",
+  "data/skills/skill-[0-9][0-9][0-9]-*.json",
+  "data/plugins/[0-9][0-9][0-9]-*.json",
+  "data/technologies/[0-9][0-9][0-9].json",
+  "data/models/catalog.json",
+  "data/providers/catalog.json",
+  "data/innovations.json",
+  "assets/pip.gltf",
+  "assets/studio.html",
+]
+
+[tool.setuptools.exclude-package-data]
+loopsieve = ["**/*.local.json", "**/*.credentials.json", "**/*.secrets.json"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

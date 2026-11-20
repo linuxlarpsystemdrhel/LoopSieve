@@ -1,0 +1,9 @@
+{
+  "id": "technology-049",
+  "name": "config files inspection",
+  "implementation": "toolkit.config_files",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

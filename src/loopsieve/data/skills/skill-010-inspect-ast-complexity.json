@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-010-inspect-ast-complexity",
+  "name": "Inspect AST complexity",
+  "purpose": "Perform a repeatable local investigation: inspect ast complexity.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "python_complexity",
+      "reason": "Collect python complexity evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "python_functions",
+      "reason": "Collect python functions evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "file_lines",
+      "reason": "Collect file lines evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "python_complexity",
+    "python_functions",
+    "file_lines"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-010-inspect-ast-complexity"
+}

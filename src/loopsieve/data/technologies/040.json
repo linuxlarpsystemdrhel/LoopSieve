@@ -1,0 +1,9 @@
+{
+  "id": "technology-040",
+  "name": "package deps inspection",
+  "implementation": "toolkit.package_deps",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

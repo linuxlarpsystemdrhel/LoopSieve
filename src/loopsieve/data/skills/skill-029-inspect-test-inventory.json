@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-029-inspect-test-inventory",
+  "name": "Inspect test inventory",
+  "purpose": "Perform a repeatable local investigation: inspect test inventory.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "unit_discovery",
+      "reason": "Collect unit discovery evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "file_search_name",
+      "reason": "Collect file search name evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "unit_discovery",
+    "file_search_name"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-029-inspect-test-inventory"
+}

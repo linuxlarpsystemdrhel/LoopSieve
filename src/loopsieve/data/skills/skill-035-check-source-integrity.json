@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-035-check-source-integrity",
+  "name": "Check source integrity",
+  "purpose": "Perform a repeatable local investigation: check source integrity.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "file_sha256",
+      "reason": "Collect file sha256 evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "file_size",
+      "reason": "Collect file size evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "project_digest",
+      "reason": "Collect project digest evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "file_sha256",
+    "file_size",
+    "project_digest"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-035-check-source-integrity"
+}

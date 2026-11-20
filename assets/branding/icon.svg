@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="LoopSieve icon">
+<title>LoopSieve icon</title>
+
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+      <path d="M12 27h12M9 44h10M12 61h9" stroke="#516E73"/>
+      <path d="M68 28H48a20 20 0 1 0 0 40h10" stroke="#142129"/>
+      <path d="M57 68h4l19-19m-13 0h13v13" stroke="#117B6E"/>
+    </g>
+    
+</svg>

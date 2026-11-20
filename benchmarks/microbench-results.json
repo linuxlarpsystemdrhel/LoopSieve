@@ -1,0 +1,23 @@
+{
+  "runner": "local Linux execution (not a cross-platform performance claim)",
+  "python": "3.13.5",
+  "doctor_cold_start_ms_samples": [
+    878.82,
+    926.14,
+    898.93
+  ],
+  "doctor_cold_start_ms_median": 898.93,
+  "catalog_validation_wall_ms": 54.56,
+  "catalog_validation_cpu_ms": 54.56,
+  "catalog_validation_tracemalloc_peak_mib": 1.656,
+  "process_peak_rss_mib": 97.52,
+  "catalogs": {
+    "agents": 100,
+    "plugins": 50,
+    "skills": 50,
+    "technologies": 50
+  },
+  "tools": 63,
+  "gpu_memory_mib": "NOT_MEASURED; no GPU model is loaded by LoopSieve",
+  "note": "CPU and Python tracemalloc metrics describe local operations, not entire agent usage"
+}

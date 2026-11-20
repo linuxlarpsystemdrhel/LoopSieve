@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "checks": [
+    {
+      "name": "average example",
+      "command": ["{python}", "example.py"],
+      "kinds": ["python"],
+      "timeout_seconds": 10
+    }
+  ]
+}

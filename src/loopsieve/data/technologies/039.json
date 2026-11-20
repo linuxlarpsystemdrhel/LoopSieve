@@ -1,0 +1,9 @@
+{
+  "id": "technology-039",
+  "name": "markdown links inspection",
+  "implementation": "toolkit.markdown_links",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

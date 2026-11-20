@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-038-audit-file-naming",
+  "name": "Audit file naming",
+  "purpose": "Perform a repeatable local investigation: audit file naming.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "file_search_name",
+      "reason": "Collect file search name evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "extension_inventory",
+      "reason": "Collect extension inventory evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "file_search_name",
+    "extension_inventory"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-038-audit-file-naming"
+}

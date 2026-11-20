@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "distribution": "LoopSieve 0.6.0",
+  "bundled_third_party_code": [],
+  "runtime_dependencies": [],
+  "optional_dependencies": [
+    {
+      "name": "textual",
+      "range": ">=0.60,<9",
+      "purpose": "optional TUI"
+    }
+  ],
+  "competitor_repositories_referenced_but_not_bundled": [
+    "openclaw/openclaw",
+    "NousResearch/hermes-agent",
+    "anomalyco/opencode",
+    "openai/codex",
+    "google-gemini/gemini-cli",
+    "OpenHands/OpenHands",
+    "cline/cline",
+    "aaif-goose/goose",
+    "Aider-AI/aider",
+    "Kilo-Org/kilocode"
+  ]
+}

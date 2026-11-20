@@ -1,0 +1,17 @@
+{
+  "description": "Run LoopSieve once after each Claude Code tool batch.",
+  "hooks": {
+    "PostToolBatch": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "loopsieve",
+            "args": ["hook"],
+            "timeout": 180
+          }
+        ]
+      }
+    ]
+  }
+}

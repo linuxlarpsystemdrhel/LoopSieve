@@ -1,0 +1,9 @@
+{
+  "id": "technology-014",
+  "name": "atomic local state persistence",
+  "implementation": "state.save_state",
+  "status": "IMPLEMENTED_PENDING_TEST",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

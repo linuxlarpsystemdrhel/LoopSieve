@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-004-inspect-npm-scripts",
+  "name": "Inspect npm scripts",
+  "purpose": "Perform a repeatable local investigation: inspect npm scripts.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "package_scripts",
+      "reason": "Collect package scripts evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "package_deps",
+      "reason": "Collect package deps evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "lock_files",
+      "reason": "Collect lock files evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "package_scripts",
+    "package_deps",
+    "lock_files"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-004-inspect-npm-scripts"
+}

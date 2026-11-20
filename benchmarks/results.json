@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-11-09",
+  "algorithm": "source-location-aware diagnostic identity",
+  "tests": [
+    {
+      "fixture": "stable-repeat.json",
+      "iterations": 8,
+      "raw_chars": 19144,
+      "loopsieve_chars": 2911,
+      "repeated_failures_suppressed": 7,
+      "diagnostic_context_reduction_ratio": 0.8479
+    },
+    {
+      "fixture": "adversarial-identity.json",
+      "iterations": 4,
+      "raw_chars": 9574,
+      "loopsieve_chars": 9574,
+      "repeated_failures_suppressed": 0,
+      "diagnostic_context_reduction_ratio": 0.0
+    },
+    {
+      "fixture": "repeated-failure.json",
+      "iterations": 8,
+      "raw_chars": 31312,
+      "loopsieve_chars": 31312,
+      "repeated_failures_suppressed": 0,
+      "diagnostic_context_reduction_ratio": 0.0
+    }
+  ],
+  "scope": "synthetic diagnostic text only",
+  "not_measured": [
+    "LLM token savings",
+    "plan usage",
+    "task success"
+  ]
+}

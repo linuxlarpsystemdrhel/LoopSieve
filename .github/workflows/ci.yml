@@ -1,0 +1,42 @@
+name: Quality and build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install development tools
+        run: python -m pip install build twine ruff==0.17.6 pip-audit
+      - name: Check Python formatting
+        run: >-
+          python -m ruff format --check
+          src/loopsieve/diagnostics.py src/loopsieve/local_llm.py src/loopsieve/runner.py src/loopsieve/release_quality.py
+          src/loopsieve/config.py src/loopsieve/engine.py src/loopsieve/models.py src/loopsieve/state.py
+          src/loopsieve/verification_state.py
+          tests/test_local_llm.py tests/test_runner_lifecycle.py tests/test_verification_reliability.py
+          tools/build_branding.py tools/check_textual.py tools/run_local_model.py
+          experiments examples
+      - name: Check Python syntax and undefined names
+        run: |
+          python -m compileall -q src tests tools experiments examples
+          python -m ruff check --select E9,F63,F7,F82 src tests tools experiments examples
+      - name: Build and validate distributions
+        run: |
+          python -m build
+          python -m twine check dist/*
+      - name: Audit optional application dependencies
+        run: |
+          python -m venv .venv-audit
+          .venv-audit/bin/python -m pip install '.[tui]'
+          .venv-audit/bin/python -m pip check
+          python -m pip_audit --path .venv-audit/lib/python3.13/site-packages

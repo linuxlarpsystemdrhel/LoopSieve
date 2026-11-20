@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-017-validate-toml-configuration",
+  "name": "Validate TOML configuration",
+  "purpose": "Perform a repeatable local investigation: validate toml configuration.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "toml_validate",
+      "reason": "Collect toml validate evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "pyproject_meta",
+      "reason": "Collect pyproject meta evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "toml_validate",
+    "pyproject_meta"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-017-validate-toml-configuration"
+}

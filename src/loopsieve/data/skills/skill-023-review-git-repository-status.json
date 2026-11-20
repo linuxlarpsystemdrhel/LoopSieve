@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-023-review-git-repository-status",
+  "name": "Review git repository status",
+  "purpose": "Perform a repeatable local investigation: review git repository status.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "git_status",
+      "reason": "Collect git status evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "git_diff_stat",
+      "reason": "Collect git diff stat evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "git_files",
+      "reason": "Collect git files evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "git_status",
+    "git_diff_stat",
+    "git_files"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-023-review-git-repository-status"
+}

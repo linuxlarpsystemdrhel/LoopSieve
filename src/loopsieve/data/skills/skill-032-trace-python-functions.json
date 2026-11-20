@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-032-trace-python-functions",
+  "name": "Trace Python functions",
+  "purpose": "Perform a repeatable local investigation: trace python functions.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "python_functions",
+      "reason": "Collect python functions evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "python_ast_symbols",
+      "reason": "Collect python ast symbols evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "python_functions",
+    "python_ast_symbols"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-032-trace-python-functions"
+}

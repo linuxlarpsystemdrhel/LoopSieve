@@ -1,0 +1,25 @@
+include CHANGELOG.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md KNOWN_LIMITATIONS.md THIRD_PARTY_NOTICES.md GITHUB_COPY.md
+recursive-include assets/branding *.svg *.png *.md
+recursive-include docs *.md
+recursive-include examples *.py
+include examples/local-diagnostics/.loopsieve.json
+recursive-include tools *.py
+recursive-include experiments *.py
+include experiments/dependency-audit.json
+include experiments/diagnostics-before.json experiments/diagnostics-after.json
+include experiments/diagnostics-before-profile.txt experiments/diagnostics-after-profile.txt
+recursive-include benchmarks *.py
+include benchmarks/results.json benchmarks/microbench-results.json
+recursive-include benchmarks/fixtures *.json
+prune .private
+prune .local-models
+prune .loopsieve
+prune .cache
+prune logs
+prune .logs
+prune .venv
+prune .venv-*
+global-exclude *.pyc *.pyo *.gguf *.gguf.* *.ggml *.safetensors *.safetensors.* *.onnx *.tflite *.ckpt *.pt *.pth pytorch_model*.bin
+global-exclude .env .env.* *.env *.env.* .envrc* .netrc .npmrc .pypirc credentials credentials.* secrets.json secrets.y*ml tokens.json
+global-exclude *.credentials.json *.secrets.json *.local.json *.local.toml *.local.yml *.local.yaml
+global-exclude *.pem *.key *.p12 *.pfx id_rsa id_ed25519 *.sqlite *.sqlite3 *.sqlite3-* *.db *.db-* *.log

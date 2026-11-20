@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "plugin-docker",
+  "name": "Container engine",
+  "kind": "external-cli-adapter",
+  "executable": "docker",
+  "probe_args": [
+    "--version"
+  ],
+  "operation": "version-health-check",
+  "capabilities": [
+    "executable-discovery",
+    "version-health-check"
+  ],
+  "permissions": [
+    "process:launch:fixed-argv"
+  ],
+  "installation": "user-managed; no automatic install",
+  "status_without_executable": "REQUIRES_DEPENDENCY",
+  "version": "1.0",
+  "max_probe_seconds": 4
+}

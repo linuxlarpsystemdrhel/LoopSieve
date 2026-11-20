@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-10",
+  "policy": "Catalog metadata only. Download and execution require explicit user action; checksums are verified when provided.",
+  "models": [
+    {
+      "id": "deepseek-coder:6.7b",
+      "name": "DeepSeek Coder 6.7B",
+      "provider": "ollama",
+      "architecture": "llama",
+      "params_b": 6.7,
+      "layers": 32,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "context_tokens": 16384,
+      "quantizations": [
+        "q8_0",
+        "q6_k",
+        "q5_k_m",
+        "q4_k_m",
+        "q3_k_m"
+      ],
+      "license": "DeepSeek Model License",
+      "download": "ollama pull deepseek-coder:6.7b",
+      "sha256": null,
+      "tags": [
+        "coding",
+        "8gb-vram"
+      ],
+      "notes": "Review the upstream license before redistribution."
+    },
+    {
+      "id": "llama3.1:8b",
+      "name": "Llama 3.1 8B",
+      "provider": "ollama",
+      "architecture": "llama",
+      "params_b": 8.0,
+      "layers": 32,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "context_tokens": 131072,
+      "quantizations": [
+        "q8_0",
+        "q6_k",
+        "q5_k_m",
+        "q4_k_m",
+        "q3_k_m"
+      ],
+      "license": "Llama 3.1 Community License",
+      "download": "ollama pull llama3.1:8b",
+      "sha256": null,
+      "tags": [
+        "general",
+        "tools",
+        "8gb-vram"
+      ],
+      "notes": "General model; tool-calling quality must be tested for each task."
+    },
+    {
+      "id": "mistral:7b",
+      "name": "Mistral 7B",
+      "provider": "ollama",
+      "architecture": "llama",
+      "params_b": 7.2,
+      "layers": 32,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "context_tokens": 32768,
+      "quantizations": [
+        "q8_0",
+        "q6_k",
+        "q5_k_m",
+        "q4_k_m",
+        "q3_k_m"
+      ],
+      "license": "Apache-2.0",
+      "download": "ollama pull mistral:7b",
+      "sha256": null,
+      "tags": [
+        "general",
+        "8gb-vram"
+      ],
+      "notes": "Broad local compatibility."
+    },
+    {
+      "id": "phi4:14b",
+      "name": "Phi-4 14B",
+      "provider": "ollama",
+      "architecture": "phi",
+      "params_b": 14.7,
+      "layers": 40,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "context_tokens": 16384,
+      "quantizations": [
+        "q8_0",
+        "q6_k",
+        "q5_k_m",
+        "q4_k_m",
+        "q3_k_m"
+      ],
+      "license": "MIT",
+      "download": "ollama pull phi4:14b",
+      "sha256": null,
+      "tags": [
+        "reasoning",
+        "12gb-vram"
+      ],
+      "notes": "Reasoning-oriented; verify coding and tool-calling."
+    },
+    {
+      "id": "llama3.2:3b",
+      "name": "Llama 3.2 3B",
+      "provider": "ollama",
+      "architecture": "llama",
+      "params_b": 3.2,
+      "layers": 28,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "context_tokens": 131072,
+      "quantizations": [
+        "q8_0",
+        "q6_k",
+        "q5_k_m",
+        "q4_k_m"
+      ],
+      "license": "Llama 3.2 Community License",
+      "download": "ollama pull llama3.2:3b",
+      "sha256": null,
+      "tags": [
+        "general",
+        "small",
+        "low-vram"
+      ],
+      "notes": "Small local fallback."
+    }
+  ]
+}

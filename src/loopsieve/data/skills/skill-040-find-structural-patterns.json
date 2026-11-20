@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-040-find-structural-patterns",
+  "name": "Find structural patterns",
+  "purpose": "Perform a repeatable local investigation: find structural patterns.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "search_regex",
+      "reason": "Collect search regex evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "python_ast_symbols",
+      "reason": "Collect python ast symbols evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "search_regex",
+    "python_ast_symbols"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-040-find-structural-patterns"
+}

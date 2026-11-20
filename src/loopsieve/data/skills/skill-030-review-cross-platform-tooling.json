@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-030-review-cross-platform-tooling",
+  "name": "Review cross-platform tooling",
+  "purpose": "Perform a repeatable local investigation: review cross-platform tooling.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "environment_paths",
+      "reason": "Collect environment paths evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "config_files",
+      "reason": "Collect config files evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "environment_paths",
+    "config_files"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-030-review-cross-platform-tooling"
+}

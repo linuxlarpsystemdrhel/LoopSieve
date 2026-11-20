@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-006-find-todo-backlog",
+  "name": "Find TODO backlog",
+  "purpose": "Perform a repeatable local investigation: find todo backlog.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "task_comments",
+      "reason": "Collect task comments evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "workspace_tree",
+      "reason": "Collect workspace tree evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "task_comments",
+    "workspace_tree"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-006-find-todo-backlog"
+}

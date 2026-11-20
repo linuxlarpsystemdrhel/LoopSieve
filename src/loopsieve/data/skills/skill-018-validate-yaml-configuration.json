@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-018-validate-yaml-configuration",
+  "name": "Validate YAML configuration",
+  "purpose": "Perform a repeatable local investigation: validate yaml configuration.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "yaml_validate",
+      "reason": "Collect yaml validate evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "file_head",
+      "reason": "Collect file head evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "yaml_validate",
+    "file_head"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-018-validate-yaml-configuration"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "technology-010",
+  "name": "bounded streaming subprocess output",
+  "implementation": "runner.BoundedStream",
+  "status": "IMPLEMENTED_PENDING_TEST",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

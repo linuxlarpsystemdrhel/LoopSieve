@@ -1,0 +1,39 @@
+name: Bug report
+description: Report incorrect verification, installation trouble, or a compatibility problem.
+title: "[bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the behavior and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: LoopSieve version
+      placeholder: 0.6.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Windows 11, Python 3.13, Claude Code version ...
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Relevant configuration
+      description: Remove secrets before pasting configuration.
+      render: json
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the changed file type, check command, and diagnostic output when possible.
+    validations:
+      required: true

@@ -1,0 +1,9 @@
+{
+  "id": "technology-022",
+  "name": "tool permission enforcement",
+  "implementation": "toolkit.run_tool",
+  "status": "IMPLEMENTED_PENDING_TEST",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

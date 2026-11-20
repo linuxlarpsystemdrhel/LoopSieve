@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-042-review-go-metadata",
+  "name": "Review Go metadata",
+  "purpose": "Perform a repeatable local investigation: review go metadata.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "go_modules",
+      "reason": "Collect go modules evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "config_files",
+      "reason": "Collect config files evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "go_modules",
+    "config_files"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-042-review-go-metadata"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "technology-017",
+  "name": "local benchmark runner",
+  "implementation": "benchmark.run_fixture",
+  "status": "IMPLEMENTED_PENDING_TEST",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

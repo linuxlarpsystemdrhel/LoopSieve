@@ -1,0 +1,9 @@
+{
+  "id": "technology-043",
+  "name": "release readiness inspection",
+  "implementation": "toolkit.release_readiness",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

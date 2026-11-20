@@ -1,0 +1,128 @@
+{
+  "observed_on": "2026-11-10",
+  "data_source": "GitHub repository API, source file metadata via GitHub connector",
+  "source_archive_downloaded": false,
+  "note": "Readmes, repository metadata, directory listings and selected source files were inspected remotely. Complete archive downloading was unavailable from the execution container. No external source code is shipped or copied.",
+  "repositories": [
+    {
+      "repo": "openclaw/openclaw",
+      "stars": 394281,
+      "license_spdx": "MIT",
+      "primary_language": "TypeScript",
+      "branch_commit_sha": "3f17d921f6cc1cf03d52054a74ba3a5e885f5c35",
+      "inspected_source_path": "src/entry.ts",
+      "inspected_blob_sha": "8a5866d7351f19e99b79c88459b021880b495086",
+      "strength": "Personal agent gateway, channels, local state, extension SDK",
+      "caveat": "Multi-channel complexity, not a narrow verification tool",
+      "repository_url": "https://github.com/openclaw/openclaw"
+    },
+    {
+      "repo": "NousResearch/hermes-agent",
+      "stars": 262233,
+      "license_spdx": "MIT",
+      "primary_language": "Python",
+      "branch_commit_sha": "7b294065935441225475f813380038ffdf43ff37",
+      "inspected_source_path": "agent/acp_client.py",
+      "inspected_blob_sha": "43dafecb5ab915bbcd1c0e55efc6393ac760cc89",
+      "strength": "Memory, skill evolution, ACP bridge, persistent agent",
+      "caveat": "Large autonomous platform; heavier operational scope",
+      "repository_url": "https://github.com/NousResearch/hermes-agent"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "stars": 225790,
+      "license_spdx": "MIT",
+      "primary_language": "TypeScript",
+      "branch_commit_sha": "98e4b5343e33aafded479b9ff71c12fd760d9d87",
+      "inspected_source_path": "packages/core/package.json",
+      "inspected_blob_sha": "38b1c5dea6ca4bb4d1e8a889076fdc60a7b6c1d9",
+      "strength": "Multi-model coding terminal and desktop, extension ecosystem",
+      "caveat": "Mature general coding agent, a direct clone would not differentiate",
+      "repository_url": "https://github.com/anomalyco/opencode"
+    },
+    {
+      "repo": "openai/codex",
+      "stars": 134667,
+      "license_spdx": "Apache-2.0",
+      "primary_language": "Rust",
+      "branch_commit_sha": "b32ada5320b043bde03a10edab6b88fc126812b4",
+      "inspected_source_path": "codex-rs/core/src/agent_communication.rs",
+      "inspected_blob_sha": "141737c50d2ecece23d617099ca0fc276b044a53",
+      "strength": "Local coding runtime, inter-agent messaging, security",
+      "caveat": "Official OpenAI product; not LoopSieve equivalent",
+      "repository_url": "https://github.com/openai/codex"
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "stars": 108754,
+      "license_spdx": "Apache-2.0",
+      "primary_language": "TypeScript",
+      "branch_commit_sha": "1930f25394c4b6338b64ffdb43083fca41614798",
+      "inspected_source_path": "packages/core/src/index.ts",
+      "inspected_blob_sha": "358fe739ff1eb8ee5f088b682916af89846532fa",
+      "strength": "Policy engine, MCP, skills, terminals, context",
+      "caveat": "Product access and user cohort differ",
+      "repository_url": "https://github.com/google-gemini/gemini-cli"
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "stars": 93108,
+      "license_spdx": "MIT",
+      "primary_language": "TypeScript",
+      "branch_commit_sha": "d64cb8a75ec520dd00b75d98838c80158b255344",
+      "inspected_source_path": "src/index.ts",
+      "inspected_blob_sha": "204b6b7b8d9b03d5e89ae41414a556b00783d25f",
+      "strength": "Agent Canvas, self-hosted control plane, multiple backends",
+      "caveat": "Operational complexity; broad target",
+      "repository_url": "https://github.com/OpenHands/OpenHands"
+    },
+    {
+      "repo": "cline/cline",
+      "stars": 71489,
+      "license_spdx": "Apache-2.0",
+      "primary_language": "TypeScript",
+      "branch_commit_sha": "92b9f722a16d2a03c1153e12f9a0e759455f509d",
+      "inspected_source_path": "apps/cli/README.md",
+      "inspected_blob_sha": "53f586e63444e69992c11e6aa260aa43ce7cb3fe",
+      "strength": "IDE agent, terminal, SDK, approvals",
+      "caveat": "Full IDE integration takes significant maintenance",
+      "repository_url": "https://github.com/cline/cline"
+    },
+    {
+      "repo": "aaif-goose/goose",
+      "stars": 56421,
+      "license_spdx": "Apache-2.0",
+      "primary_language": "Rust",
+      "branch_commit_sha": "3cf332836a13e6adb864f4c028309a7e0b0b6d27",
+      "inspected_source_path": "crates/goose-agent/Cargo.toml",
+      "inspected_blob_sha": "9026addf9da897118d5136bb0afad9f18fa0bd32",
+      "strength": "Rust desktop/CLI, MCP extensions, subagents, recipes",
+      "caveat": "Broad general-purpose agent",
+      "repository_url": "https://github.com/aaif-goose/goose"
+    },
+    {
+      "repo": "Aider-AI/aider",
+      "stars": 50047,
+      "license_spdx": "Apache-2.0",
+      "primary_language": "Python",
+      "branch_commit_sha": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+      "inspected_source_path": "aider/repomap.py",
+      "inspected_blob_sha": "541bba6ef4a5385b8cf032201ec6e3f3e32a6ea6",
+      "strength": "Repository map, git-oriented edits, local/cloud models",
+      "caveat": "Model editing quality untested against LoopSieve",
+      "repository_url": "https://github.com/Aider-AI/aider"
+    },
+    {
+      "repo": "Kilo-Org/kilocode",
+      "stars": 27927,
+      "license_spdx": "MIT",
+      "primary_language": "TypeScript",
+      "branch_commit_sha": "b69e4d64e78d2c1ad18c5273a6f9f482d86adf37",
+      "inspected_source_path": "packages/core/package.json",
+      "inspected_blob_sha": "f4c86e575130e4cf1f9965bc3b28bd386a98543c",
+      "strength": "Coding agents, plugin marketplace, IDE and CLI",
+      "caveat": "Broad platform, feature parity impractical in one release",
+      "repository_url": "https://github.com/Kilo-Org/kilocode"
+    }
+  ]
+}

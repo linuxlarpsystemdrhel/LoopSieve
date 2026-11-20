@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "release": "0.6.0-alpha",
+  "verified_on": "2026-11-10",
+  "platform": "Windows 11, Python 3.14.7",
+  "test_command": "python -m pytest -q",
+  "test_run": {
+    "test_functions_passed": 128,
+    "subtests_passed": 129,
+    "failed": 0,
+    "duration_seconds": 43.52
+  },
+  "baseline_0_5_0": {
+    "test_functions_passed": 116,
+    "subtests_passed": 129
+  },
+  "counts": {
+    "python_source_files": 56,
+    "python_source_lines": 8174,
+    "test_files": 29,
+    "test_lines": 1945,
+    "project_files": 403,
+    "agent_manifests": 100,
+    "local_tools": 63,
+    "skills": 50,
+    "plugins": 50,
+    "technologies": 50,
+    "model_catalog": 11,
+    "provider_profiles": 44,
+    "quantization_methods": 14,
+    "capability_entries": 382
+  },
+  "tests": {
+    "permission_engine": "tests/test_v06_core.py::V06CoreTests::test_permission_engine_is_deny_by_default",
+    "agent_permission_block": "tests/test_v06_core.py::V06CoreTests::test_permission_engine_blocks_agent_write",
+    "secure_store": "tests/test_v06_core.py::V06CoreTests::test_secure_store_roundtrip_without_plaintext",
+    "capability_registry": "tests/test_v06_core.py::V06CoreTests::test_capability_registry_and_router",
+    "quantization_methods": "tests/test_v06_core.py::V06CoreTests::test_quantization_methods_and_profiles",
+    "provider_catalog": "tests/test_v06_core.py::V06CoreTests::test_provider_catalog_and_custom_profile",
+    "model_team_1500": "tests/test_v06_core.py::V06CoreTests::test_model_team_1500_logical_agents_and_real_dialogue",
+    "parallel_solutions": "tests/test_v06_core.py::V06CoreTests::test_parallel_solutions",
+    "huggingface_pagination": "tests/test_v06_core.py::V06CoreTests::test_huggingface_pagination_with_fake_api",
+    "resumable_download": "tests/test_v06_core.py::V06CoreTests::test_model_downloader_resume",
+    "tui_new_sections": "tests/test_v06_core.py::V06CoreTests::test_tui_has_new_sections",
+    "compatibility_labels": "tests/test_v06_core.py::V06CoreTests::test_compatibility_labels",
+    "runtime_checkpoint": "tests/test_runtime_v05.py::RuntimeV05Tests::test_checkpoint_restore_and_time_machine",
+    "provider_fallback": "tests/test_provider_fallback.py::ProviderFallbackTests::test_fallback_switches_and_records_failure",
+    "orchestrator_parallel": "tests/test_orchestrator_v05.py::OrchestratorV05Tests::test_parallel_read_only_tasks",
+    "claude_code_hooks": "tests/test_claude_code_v05.py::ClaudeCodeV05Tests::test_install_status_uninstall",
+    "offline_demo": "tests/test_demo_v04.py::HonestDemoTests::test_demo_real_verification_and_scripted_label"
+  },
+  "verified_live_metadata": {
+    "huggingface_api_search": "One live metadata request returned real models with has_more=true; automated tests use a local fake API.",
+    "hardware_probe": "Windows 11: NVIDIA RTX 5060, 8151 MiB total VRAM, 32712 MiB RAM."
+  },
+  "not_verified": [
+    "Live Claude/Codex/Ollama task quality, latency or token usage",
+    "15 simultaneously loaded local models",
+    "1500 live inference calls",
+    "300 verified providers",
+    "Real GPTQ/AWQ/EXL2/HQQ/AQLM/VPTQ conversion and quality measurements",
+    "Computer control/GUI automation/VM sandbox",
+    "macOS execution"
+  ],
+  "upstream_research": {
+    "repositories_cloned": 10,
+    "full_working_tree_checkout": 7,
+    "partial_windows_path_checkout": 3,
+    "code_copied": 0,
+    "report": "UPSTREAM_INTEGRATIONS.md"
+  },
+  "notes": "The 100 original innovation items remain 5 implemented/tested, 16 partial and 79 planned. 0.6.0 features are separate engineering delivery items."
+}

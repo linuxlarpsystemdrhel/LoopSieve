@@ -1,0 +1,26 @@
+         183966 function calls (183266 primitive calls) in 0.293 seconds
+
+   Ordered by: cumulative time
+   List reduced from 93 to 18 due to restriction <18>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.011    0.011    0.293    0.293 diagnostics.py:97(diagnostic_identity)
+      100    0.019    0.000    0.275    0.003 diagnostics.py:39(_source_anchor)
+      200    0.000    0.000    0.208    0.001 ast.py:26(parse)
+      200    0.208    0.001    0.208    0.001 {built-in method builtins.compile}
+      100    0.023    0.000    0.142    0.001 diagnostics.py:71(scopes_for_source)
+  200/100    0.005    0.000    0.007    0.000 diagnostics.py:53(visit)
+  200/100    0.005    0.000    0.007    0.000 diagnostics.py:81(walk)
+    90201    0.006    0.000    0.006    0.000 {method 'strip' of 'str' objects}
+    62005    0.003    0.000    0.003    0.000 {built-in method builtins.isinstance}
+      201    0.000    0.000    0.003    0.000 __init__.py:932(resolve)
+      201    0.001    0.000    0.003    0.000 <frozen posixpath>:388(realpath)
+      100    0.000    0.000    0.003    0.000 __init__.py:476(relative_to)
+      100    0.000    0.000    0.002    0.000 __init__.py:780(read_text)
+      902    0.000    0.000    0.001    0.000 __init__.py:251(__str__)
+      501    0.000    0.000    0.001    0.000 __init__.py:190(__fspath__)
+  904/804    0.001    0.000    0.001    0.000 {method 'join' of 'str' objects}
+      501    0.000    0.000    0.001    0.000 __init__.py:341(drive)
+      501    0.000    0.000    0.001    0.000 __init__.py:157(with_segments)
+
+

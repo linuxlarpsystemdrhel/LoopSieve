@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-009-analyze-module-imports",
+  "name": "Analyze module imports",
+  "purpose": "Perform a repeatable local investigation: analyze module imports.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "python_imports",
+      "reason": "Collect python imports evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "python_ast_symbols",
+      "reason": "Collect python ast symbols evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "file_head",
+      "reason": "Collect file head evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "python_imports",
+    "python_ast_symbols",
+    "file_head"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-009-analyze-module-imports"
+}

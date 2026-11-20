@@ -1,0 +1,9 @@
+{
+  "id": "technology-019",
+  "name": "lazy agent registry",
+  "implementation": "agents.list_agents",
+  "status": "IMPLEMENTED_PENDING_TEST",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

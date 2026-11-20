@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="176" viewBox="0 0 780 176" role="img" aria-label="Three LoopSieve mark studies">
+<title>Three LoopSieve mark studies</title>
+
+        <rect width="780" height="176" fill="#F1F7F6"/>
+        <path d="M260 24v126m260-126v126" stroke="#C6DBD9"/>
+        <g transform="translate(82 18)">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+      <path d="M12 27h12M9 44h10M12 61h9" stroke="#516E73"/>
+      <path d="M68 28H48a20 20 0 1 0 0 40h10" stroke="#142129"/>
+      <path d="M57 68h4l19-19m-13 0h13v13" stroke="#117B6E"/>
+    </g>
+    </g>
+        <g transform="translate(342 18)" fill="none" stroke-width="7" stroke-linecap="round">
+          <path d="M12 26h26l32 22M12 48h58M12 70h26l32-22" stroke="#142129"/>
+          <path d="M68 48h16" stroke="#117B6E"/>
+        </g>
+        <g transform="translate(602 18)" fill="none" stroke-width="7" stroke-linejoin="round">
+          <path d="M20 15h52v66H20zM34 30h23m-23 14h23" stroke="#142129"/>
+          <path d="m34 60 8 7 14-15" stroke="#117B6E"/>
+        </g>
+        <g font-family="Liberation Sans, Arial, sans-serif" font-size="17" text-anchor="middle" fill="#142129">
+          <text x="130" y="145">Loop and delta</text>
+          <text x="390" y="145">Signal merge</text>
+          <text x="650" y="145">Evidence card</text>
+        </g>
+        
+</svg>

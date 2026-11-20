@@ -1,0 +1,9 @@
+{
+  "id": "technology-044",
+  "name": "secret pattern scan inspection",
+  "implementation": "toolkit.secret_pattern_scan",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

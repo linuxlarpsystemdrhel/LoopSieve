@@ -1,0 +1,9 @@
+{
+  "id": "technology-018",
+  "name": "workspace traversal boundaries",
+  "implementation": "toolkit.safe_path",
+  "status": "IMPLEMENTED_PENDING_TEST",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

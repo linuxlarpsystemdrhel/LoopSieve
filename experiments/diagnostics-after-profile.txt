@@ -1,0 +1,26 @@
+         30800 function calls (29800 primitive calls) in 0.010 seconds
+
+   Ordered by: cumulative time
+   List reduced from 104 to 18 due to restriction <18>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.010    0.010 diagnostics.py:98(diagnostic_identity)
+      100    0.000    0.000    0.004    0.000 diagnostics.py:77(_source_anchor)
+      200    0.000    0.000    0.002    0.000 __init__.py:498(is_relative_to)
+      300    0.000    0.000    0.002    0.000 <frozen _collections_abc>:1025(__contains__)
+      102    0.000    0.000    0.002    0.000 __init__.py:932(resolve)
+      102    0.000    0.000    0.001    0.000 <frozen posixpath>:388(realpath)
+        1    0.000    0.000    0.001    0.001 diagnostics.py:56(_read_source)
+      100    0.000    0.000    0.001    0.000 __init__.py:476(relative_to)
+      600    0.000    0.000    0.001    0.000 <frozen _collections_abc>:1015(__iter__)
+        1    0.000    0.000    0.001    0.001 ast.py:26(parse)
+        1    0.001    0.001    0.001    0.001 {built-in method builtins.compile}
+      300    0.000    0.000    0.001    0.000 __init__.py:63(__getitem__)
+      400    0.000    0.000    0.001    0.000 __init__.py:269(_from_parsed_parts)
+  200/100    0.001    0.000    0.001    0.000 diagnostics.py:68(_scope_at)
+      602    0.000    0.000    0.001    0.000 __init__.py:157(with_segments)
+      699    0.000    0.000    0.001    0.000 __init__.py:217(__eq__)
+      607    0.000    0.000    0.001    0.000 __init__.py:251(__str__)
+      400    0.000    0.000    0.001    0.000 __init__.py:276(_from_parsed_string)
+
+

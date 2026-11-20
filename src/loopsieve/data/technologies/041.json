@@ -1,0 +1,9 @@
+{
+  "id": "technology-041",
+  "name": "git diff stat inspection",
+  "implementation": "toolkit.git_diff_stat",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

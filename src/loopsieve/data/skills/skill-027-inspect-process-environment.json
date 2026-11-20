@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-027-inspect-process-environment",
+  "name": "Inspect process environment",
+  "purpose": "Perform a repeatable local investigation: inspect process environment.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "env_runtime",
+      "reason": "Collect env runtime evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "environment_paths",
+      "reason": "Collect environment paths evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "process_memory",
+      "reason": "Collect process memory evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "env_runtime",
+    "environment_paths",
+    "process_memory"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-027-inspect-process-environment"
+}

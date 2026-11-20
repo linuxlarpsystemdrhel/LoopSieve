@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "vendored_third_party_code": [],
+  "dependencies": [
+    {"name": "textual", "license": "MIT", "usage": "optional TUI", "source": "https://github.com/Textualize/textual", "bundled": false},
+    {"name": "rich", "license": "MIT", "usage": "optional portable terminal styling", "source": "https://github.com/Textualize/rich", "bundled": false},
+    {"name": "PyYAML", "license": "MIT", "usage": "optional YAML inspection", "source": "https://github.com/yaml/pyyaml", "bundled": false},
+    {"name": "psutil", "license": "BSD-3-Clause", "usage": "optional memory inspection", "source": "https://github.com/giampaolo/psutil", "bundled": false},
+    {"name": "setuptools", "license": "MIT", "usage": "build backend", "source": "https://github.com/pypa/setuptools", "bundled": false}
+  ]
+}

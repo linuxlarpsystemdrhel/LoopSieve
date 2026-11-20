@@ -1,0 +1,707 @@
+{
+  "as_of": "2026-11-10",
+  "schema_version": 1,
+  "policy": "A feature is not implemented merely because it appears in this inventory.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Counterfactual Engineering Laboratory",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 2,
+      "name": "Autonomous Hypothesis Falsifier",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 3,
+      "name": "Causal Debugging Graph",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 4,
+      "name": "Agent Evolution Arena",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 5,
+      "name": "Dynamic Agent Role Synthesis",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 6,
+      "name": "Proof-Oriented Task Decomposition",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 7,
+      "name": "Autonomous Complexity Estimator",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 8,
+      "name": "Task Dependency Negotiator",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 9,
+      "name": "Agent Confidence Calibration",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 10,
+      "name": "Self-Correcting Task Contracts",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 11,
+      "name": "Semantic Context Compiler",
+      "status": "PARTIAL",
+      "evidence": "project_intelligence.compile_context; tests/test_provenance_v04.py::test_context_has_provenance_and_budget",
+      "limitations": "Line-ranked only; no semantic embeddings."
+    },
+    {
+      "id": 12,
+      "name": "Information Value Estimator",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 13,
+      "name": "Context Contradiction Detector",
+      "status": "PARTIAL",
+      "evidence": "project_intelligence.detect_doc_conflicts; tests/test_provenance_v04.py::test_conflicting_dependency_pins",
+      "limitations": "Only conflicting requirements pin patterns."
+    },
+    {
+      "id": 14,
+      "name": "Memory Provenance Ledger",
+      "status": "IMPLEMENTED_TESTED",
+      "evidence": "memory.ProjectMemory.remember; tests/test_provenance_v04.py::test_memory_invalidation_and_conflicts",
+      "limitations": "Source hash and provenance stored locally."
+    },
+    {
+      "id": 15,
+      "name": "Context Expiration Engine",
+      "status": "IMPLEMENTED_TESTED",
+      "evidence": "memory.ProjectMemory.query; tests/test_provenance_v04.py::test_memory_invalidation_and_conflicts",
+      "limitations": "TTL and change invalidation for declared sources."
+    },
+    {
+      "id": 16,
+      "name": "Minimal Reproduction Context",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 17,
+      "name": "Inter-Agent Knowledge Exchange",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 18,
+      "name": "Context Quality Benchmark",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 19,
+      "name": "Adaptive Memory Layers",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 20,
+      "name": "Knowledge Conflict Resolution",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 21,
+      "name": "Evidence-Carrying Code Changes",
+      "status": "PARTIAL",
+      "evidence": "agent_runtime.Journal.event + provenance.EvidenceLedger; tests/test_autonomy.py",
+      "limitations": "Evidence events recorded, but no per-line patch provenance."
+    },
+    {
+      "id": 22,
+      "name": "Invisible Regression Hunter",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 23,
+      "name": "Automated Test Gap Miner",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 24,
+      "name": "Mutation-Based Agent Evaluation",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 25,
+      "name": "Verification Independence Engine",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 26,
+      "name": "Diagnostic Identity Graph",
+      "status": "PARTIAL",
+      "evidence": "diagnostics.result_fingerprint; tests/test_regressions.py",
+      "limitations": "Conservative fingerprinting, no full cause graph."
+    },
+    {
+      "id": 27,
+      "name": "Verification Debt Tracker",
+      "status": "PARTIAL",
+      "evidence": "provenance.acceptance_gate; tests/test_provenance_v04.py::test_release_gate_no_false_success",
+      "limitations": "Gate for declared checks, not full codebase debt view."
+    },
+    {
+      "id": 28,
+      "name": "Failure Reproduction Capsule",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 29,
+      "name": "Real-World Test Authenticity Checker",
+      "status": "PARTIAL",
+      "evidence": "provenance.acceptance_gate; tests/test_provenance_v04.py::test_release_gate_no_false_success",
+      "limitations": "Authenticity label is caller-supplied; not cryptographic attestation."
+    },
+    {
+      "id": 30,
+      "name": "No-False-Success Release Gate",
+      "status": "IMPLEMENTED_TESTED",
+      "evidence": "release_quality.run_required_checks; tests/test_provenance_v04.py::test_opt_in_real_check_and_failure",
+      "limitations": "Explicit argv and exit code checks; no shell."
+    },
+    {
+      "id": 31,
+      "name": "Repository Archaeology Engine",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 32,
+      "name": "Intent-Preserving Refactoring",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 33,
+      "name": "Architecture Drift Monitor",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 34,
+      "name": "Multi-Branch Solution Tournament",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 35,
+      "name": "Semantic Merge Assistant",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 36,
+      "name": "Migration Rehearsal Simulator",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 37,
+      "name": "Automatic Rollback Planner",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 38,
+      "name": "Codebase Impact Radar",
+      "status": "PARTIAL",
+      "evidence": "project_intelligence.python_impact; tests/test_provenance_v04.py::test_python_reverse_dependency_impact",
+      "limitations": "Static Python import graph only."
+    },
+    {
+      "id": 39,
+      "name": "Incremental Architecture Builder",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 40,
+      "name": "Autonomous Release Candidate Inspector",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 41,
+      "name": "Living Agent World",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 42,
+      "name": "Animated 3D Companion",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 43,
+      "name": "Interactive Task Time Machine",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 44,
+      "name": "Visual Reasoning Evidence Map",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 45,
+      "name": "Agent Conversation Inspector",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 46,
+      "name": "Live Repository Projection",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 47,
+      "name": "Intelligent Command Palette",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 48,
+      "name": "Contextual Developer Education",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 49,
+      "name": "Adaptive Interface Density",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 50,
+      "name": "Universal Interaction History",
+      "status": "PARTIAL",
+      "evidence": "agent_runtime.Journal; tests/test_autonomy.py",
+      "limitations": "Agent session event history but CLI/TUI/Studio history not yet unified."
+    },
+    {
+      "id": 51,
+      "name": "Semantic Tool Discovery",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 52,
+      "name": "Automatic Tool Contract Validator",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 53,
+      "name": "Capability Compatibility Negotiator",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 54,
+      "name": "Plugin Dependency Resolver",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 55,
+      "name": "Plugin Safety Quarantine",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 56,
+      "name": "Cross-Agent Tool Sharing",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 57,
+      "name": "Tool Behavior Fingerprinting",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 58,
+      "name": "Local-First Tool Fallback",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 59,
+      "name": "Plugin Integration Test Generator",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 60,
+      "name": "Capability Evidence Browser",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 61,
+      "name": "Resource-Aware Swarm Scheduler",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 62,
+      "name": "Token Return-on-Investment Router",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 63,
+      "name": "Predictive Context Cost Model",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 64,
+      "name": "Autonomous Budget Circuit Breaker",
+      "status": "PARTIAL",
+      "evidence": "agent_runtime.AgentRuntime.step; tests/test_autonomy.py::test_budget_and_strict_workspaces",
+      "limitations": "Static step budget; no live cost accounting."
+    },
+    {
+      "id": 65,
+      "name": "Agent Hibernation Engine",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 66,
+      "name": "Shared Immutable Artifact Store",
+      "status": "IMPLEMENTED_TESTED",
+      "evidence": "provenance.ArtifactStore; tests/test_provenance_v04.py::test_artifact_content_addressed_and_corruption",
+      "limitations": "Local immutable SHA-256 blob store."
+    },
+    {
+      "id": 67,
+      "name": "Incremental Tool Execution Cache",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 68,
+      "name": "Adaptive Local Execution Planner",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 69,
+      "name": "Resource Pressure Recovery",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 70,
+      "name": "Real Token Savings Auditor",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 71,
+      "name": "Agent Permission Firewall",
+      "status": "PARTIAL",
+      "evidence": "agent_runtime.AgentRuntime._action; tests/test_autonomy.py",
+      "limitations": "Action allowlist and opt-in writes, not OS sandbox."
+    },
+    {
+      "id": 72,
+      "name": "Tool Side-Effect Preview",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 73,
+      "name": "Prompt Injection Isolation",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 74,
+      "name": "Secret Exposure Prevention",
+      "status": "PARTIAL",
+      "evidence": "provenance.sanitize; tests/test_provenance_v04.py::test_secret_redaction",
+      "limitations": "Pattern-based redaction; not comprehensive secret discovery."
+    },
+    {
+      "id": 75,
+      "name": "Dependency Trust Monitor",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 76,
+      "name": "Safe Autonomous Execution Zones",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 77,
+      "name": "Temporary Permission Tokens",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 78,
+      "name": "Destructive Action Escrow",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 79,
+      "name": "Audit Evidence Chain",
+      "status": "IMPLEMENTED_TESTED",
+      "evidence": "provenance.EvidenceLedger; tests/test_provenance_v04.py::test_append_audit_and_tamper_detection",
+      "limitations": "Append-only hash chain; needs external head for hostile tamper resistance."
+    },
+    {
+      "id": 80,
+      "name": "Emergency Swarm Stop",
+      "status": "PARTIAL",
+      "evidence": "agent_runtime.AgentRuntime.cancel; tests/test_autonomy.py::CancellationSafety",
+      "limitations": "Cancellation per session, no global kill switch."
+    },
+    {
+      "id": 81,
+      "name": "Agent Expertise Scorecards",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 82,
+      "name": "Independent Agent Jury",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 83,
+      "name": "Collaboration Bottleneck Detector",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 84,
+      "name": "Intelligent Escalation Protocol",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 85,
+      "name": "Verified Knowledge Handoff",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 86,
+      "name": "Self-Improving Workflow Experiments",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 87,
+      "name": "Agent Specialization Benchmark",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 88,
+      "name": "Task Quality Contract Market",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 89,
+      "name": "Automated Acceptance Criteria Generator",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 90,
+      "name": "Human-AI Collaboration Optimizer",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 91,
+      "name": "One-Command Autonomous Demo",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 92,
+      "name": "Public Feature Comparison Engine",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 93,
+      "name": "Community Workflow Marketplace",
+      "status": "PARTIAL",
+      "evidence": "catalog list_entries + skills; tests/test_catalog_runtime.py",
+      "limitations": "Local skills validated but no remote marketplace."
+    },
+    {
+      "id": 94,
+      "name": "Verified Plugin Reputation",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 95,
+      "name": "Reproducible Bug Contribution System",
+      "status": "PARTIAL",
+      "evidence": "provenance.portable_capsule; tests/test_provenance_v04.py::test_capsule_excludes_messages_and_keys",
+      "limitations": "Metadata-only repro capsule, no minimal failing fixture."
+    },
+    {
+      "id": 96,
+      "name": "Local Interactive Product Tour",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 97,
+      "name": "Cross-Project Workflow Portability",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 98,
+      "name": "Developer Productivity Observatory",
+      "status": "PARTIAL",
+      "evidence": "engine.state_report; tests/test_engine.py",
+      "limitations": "Local verification metrics, no real productivity attribution."
+    },
+    {
+      "id": 99,
+      "name": "Maintainer Intelligence Dashboard",
+      "status": "PLANNED",
+      "evidence": null,
+      "limitations": "Not implemented. Requires engineering, API, tests and benchmarks."
+    },
+    {
+      "id": 100,
+      "name": "Portable Autonomous Engineering Capsule",
+      "status": "PARTIAL",
+      "evidence": "provenance.portable_capsule; tests/test_provenance_v04.py::test_capsule_excludes_messages_and_keys",
+      "limitations": "Metadata-only; does not bundle full project or replay environment."
+    }
+  ]
+}

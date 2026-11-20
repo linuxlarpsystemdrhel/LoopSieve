@@ -1,0 +1,9 @@
+{
+  "id": "technology-031",
+  "name": "python ast symbols inspection",
+  "implementation": "toolkit.python_ast_symbols",
+  "status": "IMPLEMENTED",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

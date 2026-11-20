@@ -1,0 +1,24 @@
+name: Feature request
+description: Propose a measurable improvement.
+title: "[feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What repeated workflow or verification failure are you trying to remove?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Example or evidence
+      description: A real repository case, log sample, or benchmark is especially useful.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest behavior that would solve the problem.
+    validations:
+      required: true

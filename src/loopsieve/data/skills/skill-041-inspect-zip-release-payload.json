@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-041-inspect-zip-release-payload",
+  "name": "Inspect ZIP release payload",
+  "purpose": "Perform a repeatable local investigation: inspect zip release payload.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "archive_zip_list",
+      "reason": "Collect archive zip list evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "file_stat",
+      "reason": "Collect file stat evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "archive_zip_list",
+    "file_stat"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-041-inspect-zip-release-payload"
+}

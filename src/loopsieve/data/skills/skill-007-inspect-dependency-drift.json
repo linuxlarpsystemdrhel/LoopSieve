@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "skill-007-inspect-dependency-drift",
+  "name": "Inspect dependency drift",
+  "purpose": "Perform a repeatable local investigation: inspect dependency drift.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "lock_files",
+      "reason": "Collect lock files evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "config_files",
+      "reason": "Collect config files evidence before the next stage"
+    },
+    {
+      "step": 3,
+      "tool": "project_digest",
+      "reason": "Collect project digest evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "lock_files",
+    "config_files",
+    "project_digest"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-007-inspect-dependency-drift"
+}

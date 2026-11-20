@@ -1,0 +1,9 @@
+{
+  "id": "technology-009",
+  "name": "duplicate failure filtering",
+  "implementation": "engine.verify",
+  "status": "IMPLEMENTED_PENDING_TEST",
+  "evidence": "Source implementation available; individual behavior must be confirmed by tests",
+  "scope": "local deterministic mechanism",
+  "dependencies": []
+}

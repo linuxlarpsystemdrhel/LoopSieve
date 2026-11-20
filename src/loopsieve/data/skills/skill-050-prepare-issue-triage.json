@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "skill-050-prepare-issue-triage",
+  "name": "Prepare issue triage",
+  "purpose": "Perform a repeatable local investigation: prepare issue triage.",
+  "requirements": [
+    "Open an existing workspace",
+    "Review files and arguments before running tools"
+  ],
+  "project_types": [
+    "any"
+  ],
+  "inputs": {
+    "root": "local workspace",
+    "paths": "optional file overrides"
+  },
+  "workflow": [
+    {
+      "step": 1,
+      "tool": "task_comments",
+      "reason": "Collect task comments evidence before the next stage"
+    },
+    {
+      "step": 2,
+      "tool": "git_log",
+      "reason": "Collect git log evidence before the next stage"
+    }
+  ],
+  "tools": [
+    "task_comments",
+    "git_log"
+  ],
+  "permissions": [
+    "workspace:read"
+  ],
+  "quality_gates": [
+    "No unchecked success claims",
+    "All selected tools complete or report a concrete error"
+  ],
+  "outputs": [
+    "structured observations",
+    "failure details",
+    "recommended next checks"
+  ],
+  "failure_handling": "Stop and expose tool error; do not substitute fabricated evidence",
+  "example_usage": "loopsieve skills run skill-050-prepare-issue-triage"
+}
