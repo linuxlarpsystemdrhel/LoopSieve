@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoopSieve · Local verification</title>
+<style>
+:root{color-scheme:light dark;font-family:system-ui,sans-serif;--ink:#182233;--muted:#566171;--surface:#f3f6f9;--line:#d7dfe6;--accent:#145e4c;background:#fff;color:var(--ink)}
+@media(prefers-color-scheme:dark){:root{--ink:#e8eff3;--muted:#a1b0c0;--surface:#1c2937;--line:#354557;--accent:#addec8;background:#101821}}
+body{max-width:66rem;margin:auto;padding:2rem clamp(1rem,4vw,3rem)}header{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}h1{letter-spacing:-.04em}h2{font-size:1.25rem;margin-top:2.25rem}button{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:.65rem;padding:.6rem 1rem;font:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:.75rem;padding:0}dl div{border:1px solid var(--line);background:var(--surface);padding:.9rem;border-radius:.65rem}dt{color:var(--muted);font-size:.9rem}dd{margin:.3rem 0 0;font-size:1.7rem;font-weight:650;color:var(--accent)}.table{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap;text-align:left}th,td{padding:.65rem;border-block-end:1px solid var(--line)}th{color:var(--muted);font-weight:600}p{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><h1>LoopSieve</h1><button id="refresh" type="button">Refresh</button></header>
+<main>
+<p id="status" role="status"></p>
+<dl id="stats" aria-label="Verification summary"></dl>
+<section><h2>Latest checks</h2><div id="checks" class="table"></div></section>
+<section><h2>Agent sessions</h2><div id="sessions" class="table"></div></section>
+</main>
+<script>
+const byId = id => document.getElementById(id);
+function element(tag, text) { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; return node; }
+function table(container, rows, columns, empty) {
+  container.replaceChildren();
+  if (!rows.length) { container.append(element('p', empty)); return; }
+  const table = element('table'), header = table.createTHead().insertRow(), body = table.createTBody();
+  columns.forEach(([label]) => { const th = element('th', label); th.scope = 'col'; header.append(th); });
+  for (const row of rows) { const tr = body.insertRow(); for (const [, key] of columns) tr.insertCell().textContent = row[key] ?? ''; }
+  container.append(table);
+}
+async function refresh() {
+  const button = byId('refresh'); button.disabled = true;
+  try {
+    const response = await fetch('/api/dashboard', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Local state is unavailable.');
+    const data = await response.json();
+    byId('stats').replaceChildren(...[['Runs','runs'],['Passed','passed_runs'],['Failed','failed_runs'],['Cache hits','cached_checks']].map(([label,key]) => { const card = element('div'); card.append(element('dt',label),element('dd',data.stats[key])); return card; }));
+    table(byId('checks'),data.checks,[['Check','name'],['Status','status'],['Delta','delta'],['Time in ms','duration_ms']],'Run a check to populate this table.');
+    table(byId('sessions'),data.sessions,[['Session','id'],['Role','agent_id'],['Status','status'],['Step','step']],'No local sessions yet.');
+    byId('status').textContent = '';
+  } catch (error) { byId('status').textContent = error.message; }
+  finally { button.disabled = false; }
+}
+byId('refresh').addEventListener('click', refresh); refresh();
+</script>
+</body>
+</html>

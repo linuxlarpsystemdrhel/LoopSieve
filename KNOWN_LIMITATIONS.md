@@ -24,3 +24,8 @@
     surface; browser UI is not the product.
 11. **No 10,000-star or competitor-superiority claim.** No user study or
     comparative benchmark supports such a claim.
+12. **Native runtime coverage.** Rust has its own report and session schemas,
+    local Ollama and llama.cpp integrations, sequential teams, a line-oriented
+    terminal and a read-only dashboard. Existing Python sessions and full-screen
+    and Studio workflows still use Python. The native tests ran on Linux with
+    loopback fixtures for model protocols. [Implementation status](docs/IMPLEMENTATION_STATUS.md).

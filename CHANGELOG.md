@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Added the native `loopsieve` command with persistent local Ollama agents, verified exact-match patches, checkpoint recovery and scoped sequential teams.
+- Ported loopback llama.cpp explanations and model launch, checksum-pinned model files, hardware metadata, local hook installation, read-only MCP inspection, terminal chat and the local dashboard.
+- Added read-only inspection of historical Python verification state and SQLite session metadata.
+- Added a native Rust verification preview with bounded execution, structured diagnostic deltas, declared-input caching, and local evidence export.
+- Added a native post-edit hook and declarative verification tasks with dependency ordering and failure propagation.
+- Added the Rust migration guide, three-workload baseline, cross-platform build workflow, and capability coverage matrix.
 - Excluded private state, credentials, model weights and local benchmark output from publication paths.
 - Serialized verification-state updates across processes with an OS file lock. State failures now preserve verification outcomes.
 - Validated project configuration before running checks and compared declared inputs before and after cacheable executions.

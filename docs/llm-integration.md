@@ -11,7 +11,7 @@ From the checkout, after installing LoopSieve:
 ```bash
 mkdir -p .private
 printf '%s\n' '{"model":"local-model"}' > .private/llm.local.json
-python tools/run_local_model.py --weights .local-models/your-model.gguf --device auto
+loopsieve models serve --weights .local-models/your-model.gguf --device cpu
 ```
 
 Run the example from a second terminal:
@@ -27,7 +27,7 @@ The example intentionally fails with exit code 1. The regular command runs the s
 loopsieve check --root examples/local-diagnostics example.py
 ```
 
-The launcher binds to `127.0.0.1:8080`. `--device auto` picks a detected CUDA device or uses CPU. `--device cpu` forces CPU. The default context is 8,192 tokens. Override it with `--context-tokens` to suit your model and available memory. Press Ctrl+C to stop the server.
+The launcher binds to `127.0.0.1:8080`. `--device cpu` sets zero GPU layers. `--device auto` delegates offload selection to llama.cpp, and `--device gpu` requests all layers from a GPU-enabled build. The default context is 8,192 tokens. Override it with `--context-tokens` to suit your model and available memory. Press Ctrl+C to stop the server. [llama.cpp server options](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md).
 
 ## Inference settings
 

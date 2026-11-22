@@ -9,6 +9,7 @@
 
 ## Experimental
 
+- Native Rust CLI for verification, conservative caching, evidence export, local agent sessions and scoped sequential teams. [Rust migration status](IMPLEMENTATION_STATUS.md).
 - Local explanations on Linux with a user-supplied GGUF and explicit client configuration.
 - Provider adapters, model teams and agent orchestration. Consult the provider catalog for individual verification status.
 - Confidence in the diagnostic model is limited to controlled failure cases.
@@ -20,3 +21,4 @@
 3. Extend structured diagnostic parsing to more compiler and linter output formats.
 4. Validate concurrent verification and improve process containment on Windows.
 5. Validate GitHub-hosted CI and artifact preparation after the owner authorizes publication.
+6. Extend native parity to legacy session continuation, tool workflows, provider routing, full-screen and Studio views, and parallel orchestration. Verify each workflow before retiring its Python entry point.

@@ -1,0 +1,10 @@
+{
+  "tasks": [
+    {
+      "id": "verify-rust-workspace",
+      "files": ["crates/loopsieve-core/src/lib.rs"],
+      "checks": ["Rust workspace tests"],
+      "estimated_seconds": 10
+    }
+  ]
+}

@@ -32,6 +32,22 @@ A good PR normally has all of these:
 - documentation for any new configuration;
 - benchmark evidence for performance or context-reduction claims.
 
+## Native verification development
+
+The Rust preview and Python reference both ship from this repository. If you change shared verification behavior, run both suites and compare the historical fixture counters.
+
+```sh
+cargo fmt --all -- --check
+cargo clippy --workspace --all-targets --locked -- -D warnings
+cargo test --workspace --locked
+cargo build --workspace --release --locked
+cargo audit
+```
+
+`cargo audit` requires the RustSec client and an advisory database. [Migration guide](MIGRATION.md) · [Benchmark harness](docs/benchmarks.md).
+
+Native model integration tests bind temporary servers to `127.0.0.1`. They exercise HTTP framing and action validation using synthetic decisions and require no model downloads or credentials.
+
 ## Fingerprinting changes
 
 Fingerprint changes need adversarial tests. A fingerprint that suppresses a materially new error is worse than one that emits a small amount of duplicate text.

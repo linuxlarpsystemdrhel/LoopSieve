@@ -1,5 +1,7 @@
 # Architecture
 
+The [native architecture](../ARCHITECTURE.md#native-verification) covers Rust verification and the native agent runtime. The architecture below describes the Python compatibility engine.
+
 LoopSieve 0.6 is a Python package with a terminal workbench, Claude Code hooks, an optional read-only localhost web surface, a verification engine, and a bounded agent runtime. The bundled HTML/JavaScript and glTF are static Studio assets. JSON holds catalogs, check configuration and fixtures. TOML defines Python packaging, and YAML configures GitHub Actions. Python's standard library provides process, HTTP, JSON and SQLite support. Textual is optional.
 
 ```mermaid

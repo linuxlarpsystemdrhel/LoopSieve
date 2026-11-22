@@ -92,3 +92,7 @@ coverage.xml
 *.env
 *.env.*
 !*.env.example
+
+# Rust workspace build output
+/target/
+.claude/.loopsieve-hook.lock

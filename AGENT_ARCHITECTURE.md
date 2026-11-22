@@ -1,5 +1,7 @@
 # Agent architecture
 
+The native runtime provides persistent role-bound Ollama sessions and sequential teams with per-task models. The architecture below describes the Python model-slot and dialogue implementation. [Rust architecture](ARCHITECTURE.md#native-agent-runtime) · [Implementation status](docs/IMPLEMENTATION_STATUS.md).
+
 ## Layers
 
 1. **Role manifest** — 100 JSON definitions with instructions, permissions,

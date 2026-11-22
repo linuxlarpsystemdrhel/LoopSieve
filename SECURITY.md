@@ -10,7 +10,7 @@ LoopSieve runs local verification commands. A repository configuration can there
 
 Treat `.loopsieve.json` with the same level of trust as `package.json` scripts, a Makefile, CI configuration, or a test runner configuration.
 
-## Runtime protections
+## Python compatibility protections
 
 The current runtime:
 
@@ -52,6 +52,14 @@ The current runtime:
 - Quantization metadata does not imply that a model can be re-quantized without quality loss. Conversion must use the backend's official tool and be benchmarked afterwards.
 
 These controls do not make an untrusted check command safe. A configured executable can still read files, access the network, or modify the machine according to the user's operating-system permissions.
+
+### Native Rust runtime
+
+The Rust CLI runs checks as argument vectors, checks workspace paths, and bounds process output and execution time. On Unix it supervises the child process group. On Windows, cleanup covers the direct child. Check executables run with the invoking account's permissions and environment, so use trusted configurations and workspace contents. The native hook uses the caller-selected workspace and gets commands from its project configuration.
+
+Evidence is local and entries are hash-linked for integrity checks. Anyone with write access to the state directory can replace the chain and recompute its hashes. Redaction covers common secret forms on a best-effort basis. Treat retained output and evidence exports as potentially sensitive before sharing them.
+
+Native Ollama and llama.cpp requests use a loopback endpoint with HTTP redirects and proxy inheritance disabled. Agent patches require the write grant. Verification commands require a separate check grant. Team sessions additionally enforce their per-task write set. The loopback dashboard accepts read-only requests for its own host and origin and shows check and session metadata. Model downloads fetch an explicitly approved HTTPS artifact and only publish it locally after a matching SHA-256 digest.
 
 ### Experimental local diagnostics
 

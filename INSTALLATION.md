@@ -1,6 +1,9 @@
 # Installation
 
-## Windows 11 (PowerShell)
+
+Build from the checkout with Rust 1.89+ and a C toolchain using `cargo build --release --locked --workspace`. Invoke `./target/release/loopsieve` on Linux/macOS or `target/release/loopsieve.exe` on Windows. [Rust migration guide](MIGRATION.md).
+
+## Python compatibility on Windows 11
 
 ```powershell
 git clone <repository>

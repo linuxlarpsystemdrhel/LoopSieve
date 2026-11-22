@@ -1,0 +1,25 @@
+[package]
+name = "loopsieve-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+default-run = "loopsieve"
+
+[[bin]]
+name = "loopsieve"
+path = "src/bin/loopsieve.rs"
+
+[[bin]]
+name = "loopsieve-rs"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+ctrlc.workspace = true
+loopsieve-core = { path = "../loopsieve-core", version = "0.6.0" }
+serde.workspace = true
+serde_json.workspace = true
+tempfile.workspace = true
+uuid.workspace = true

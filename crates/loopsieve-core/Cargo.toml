@@ -1,0 +1,26 @@
+[package]
+name = "loopsieve-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+globset.workspace = true
+regex.workspace = true
+rusqlite = { version = "0.43", features = ["bundled"] }
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+tempfile.workspace = true
+ureq.workspace = true
+url.workspace = true
+uuid.workspace = true
+walkdir.workspace = true
+
+[build-dependencies]
+serde_json.workspace = true
+
+[target.'cfg(unix)'.dependencies]
+libc.workspace = true

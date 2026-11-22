@@ -1,5 +1,8 @@
 # Configuration
 
+
+Native `loopsieve` and its alias `loopsieve-rs` read version 1 of `.loopsieve.json`. Rust accepts explicit argv commands, project-relative working directories, declared file inputs and globs, and opt-in deterministic caching. Use `LOOPSIEVE_RUST_STATE_DIR` for a Rust-specific state base. [Configuration compatibility](MIGRATION.md).
+
 ## `.loopsieve.json`
 
 Defines local checks, context limits, deduplication and cache policy. Treat it
@@ -9,19 +12,19 @@ Each check must be an object. If supplied, its name must be a nonempty string an
 
 Cache reuse is opt-in via `complete_inputs` and `deterministic`. Successful executions are cached only after matching pre- and post-check input fingerprints. Prefer absolute executables or `{python}` for cacheable Windows checks. Checks may still run when the local state directory is unavailable, in which case the CLI reports a state warning beside the observed result.
 
-## Environment
+## Python compatibility environment
 
 - `LOOPSIEVE_STATE_DIR` or `CLAUDE_PLUGIN_DATA` — state directory override.
 - `HF_TOKEN` / `HUGGING_FACE_HUB_TOKEN` — optional Hugging Face metadata token.
 - `LOOPSIEVE_<PROVIDER>_KEY` — optional provider key; prefer `loopsieve secrets`.
 - `LOOPSIEVE_API_KEY` — compatible-provider key environment variable.
 
-## Secrets
+## Python compatibility secret store
 
 ```bash
-loopsieve secrets set --name provider:openai
-loopsieve secrets list
-loopsieve secrets delete --name provider:openai
+python -m loopsieve secrets set --name provider:openai
+python -m loopsieve secrets list
+python -m loopsieve secrets delete --name provider:openai
 ```
 
 Windows uses DPAPI. Non-Windows prefers keyring, then a 0o600 local file with a

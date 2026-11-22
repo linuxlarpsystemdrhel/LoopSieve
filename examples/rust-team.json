@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    {
+      "id": "inspect-verifier",
+      "task": "Read crates/loopsieve-core/src/verify.rs and summarize how it classifies results.",
+      "agent_id": "005-rust-engineer",
+      "max_steps": 5,
+      "estimated_seconds": 15
+    },
+    {
+      "id": "inspect-config",
+      "task": "Read crates/loopsieve-core/src/config.rs and summarize how it selects trusted local checks.",
+      "agent_id": "005-rust-engineer",
+      "depends_on": ["inspect-verifier"],
+      "max_steps": 5
+    }
+  ]
+}

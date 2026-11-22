@@ -5,6 +5,10 @@
 
 # LoopSieve
 
+**Native Rust build.** `loopsieve` covers local verification, diagnostic deltas, persistent Ollama agent sessions, scoped teams, local model management, and terminal and browser workbenches. `loopsieve-rs` remains an alias. Python remains available for compatibility workflows.
+
+[Migration guide](MIGRATION.md) · [Rust implementation status](docs/IMPLEMENTATION_STATUS.md) · [Benchmarks](docs/benchmarks.md)
+
 Local verification and diagnostic delta filtering for coding workflows, with optional on-device LLM explanations.
 
 LoopSieve runs project checks against changed files, records their outcomes, and controls how much diagnostic output goes back to a developer or coding agent. If a check fails twice with the same diagnostic identity, the Claude Code hook can show the unchanged failure without attaching the same log again. An optional local model can explain current failures from the command line.
@@ -13,43 +17,38 @@ LoopSieve runs project checks against changed files, records their outcomes, and
 
 **Established core.** The CLI selects and runs configured checks, bounds output and runtime, and records the outcome. The verification cache reuses successful results only for checks that declare deterministic behavior and complete local inputs. The Claude Code hook can attach the diagnostic delta to the conversation. The terminal workbench exposes check history, local tools, task state, and provider settings.
 
-**Experimental.** `check --explain` provides advisory summaries with a user-configured local llama.cpp model. The existing bounded agent runtime, provider routing, orchestration, and multi-model workbench are also available for opt-in use. Provider and model catalog entries carry their own verification status.
+**Experimental.** Native `check --explain`, the Ollama-backed agent runtime, and sequential team scheduling are opt-in. Catalog entries retain their individual verification status. External providers, advanced orchestration and the full-screen workbench remain available through Python.
 
 **Planned.** Broader real-project quality evaluation, CUDA validation on additional devices, stronger Windows process containment, and structured parsing for additional check tools. See the [roadmap](docs/roadmap.md).
 
 ## Requirements and installation
 
-- Python 3.11 or later. The core uses the standard library.
-- The tools your repository checks call, such as Python, npm, Go, or Cargo.
-- Textual for the optional full-screen workbench. The command-line interface and portable workbench run without it.
-- For local explanations, a trusted Linux `llama-server` build and your own compatible GGUF. See [installation](docs/installation.md) and [model setup](docs/llm-integration.md).
+- Rust 1.89 or later and a C compiler for native dependencies.
+- The runtime tools called by your project's checks, such as Cargo, npm, Go or Python.
+- Optional Ollama for local agents or a trusted llama.cpp build and GGUF for advisory explanations.
 
 From the checkout:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install .
-loopsieve doctor
+```sh
+cargo build --release --workspace --locked
+./target/release/loopsieve doctor
+./target/release/loopsieve check --json crates/loopsieve-core/src/lib.rs
+./target/release/loopsieve tui
 ```
+
+For an installed command, use `cargo install --path crates/loopsieve-cli --locked --bin loopsieve`. For legacy workflows, run `PYTHONPATH=src python -m loopsieve` from the checkout. See the [migration guide](MIGRATION.md) for data and command compatibility.
 
 ## Quick start
 
-In a trusted project, initialize a check configuration, inspect it, and pass the files you changed.
+In a trusted project, initialize a check configuration, review it, and pass changed files:
 
-```bash
+```sh
 loopsieve init
-loopsieve check src/example.py
+loopsieve check src/lib.rs
 loopsieve report --json
 ```
 
-To try the bundled failure example from this checkout:
-
-```bash
-loopsieve check --root examples/local-diagnostics example.py
-```
-
-The example exits with code 1 and displays the failed check. Other entry points include `loopsieve demo` for the offline demonstration, `loopsieve tui` for the terminal workbench, and `loopsieve claude install` for the optional project hook. See [usage](docs/usage.md) for commands and exit codes.
+Run `loopsieve claude install` to add a project-local post-edit hook. `loopsieve web` opens a read-only localhost dashboard, and `loopsieve tui` opens the native terminal workbench. See the [migration guide](MIGRATION.md) for local agents and model commands.
 
 ## How it works
 
@@ -62,11 +61,11 @@ See the [architecture map](docs/architecture.md) for the verification, agent and
 
 ## Local LLM example
 
-The [local model guide](docs/llm-integration.md) shows how to supply a GGUF, start a loopback server, and select the served alias with `--llm-config`. A failed check still exits 1 when the server is unavailable. The model receives a bounded diagnostic excerpt and its reply appears as advice.
+Run `loopsieve models serve --weights .local-models/your-model.gguf` to start a compatible local llama.cpp server. Use `loopsieve check --explain --llm-config PATH FILE` with the served alias. [Local model guide](docs/llm-integration.md). A failed check still exits 1 when the server is unavailable. The model receives a bounded diagnostic excerpt and its reply appears as advice.
 
 ## Measured performance
 
-The [benchmark report](docs/benchmarks.md) includes offline diagnostic fixtures, Python fingerprint profiling, and a tool for measuring inference with your own local model.
+The [benchmark report](docs/benchmarks.md) includes the native CLI comparison, offline diagnostic fixtures, Python fingerprint profiling, and a harness for measuring inference with your own local model.
 
 ## Use cases and limits
 
